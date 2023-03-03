@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if Python 3 is installed
+if ! command -v python3 &>/dev/null; then
+    # Install Homebrew if it's not already installed
+    if ! command -v brew &>/dev/null; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    # Install Python 3 using Homebrew
+    brew update
+    brew install python
+fi
+
